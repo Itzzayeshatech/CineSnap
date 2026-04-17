@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-space-950: #020617;
+  --color-space-900: #0a0a0a;
+  --color-nebula-purple: #7e22ce;
+  --color-nebula-pink: #be185d;
+  --color-cyan-neon: #06b6d4;
+  --color-pink-neon: #ec4899;
+  
+  --font-orbitron: "Orbitron", sans-serif;
+  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes glow {
+    from { box-shadow: 0 0 10px var(--color-cyan-neon), 0 0 20px var(--color-cyan-neon); }
+    to { box-shadow: 0 0 20px var(--color-cyan-neon), 0 0 40px var(--color-cyan-neon); }
+  }
+}
+
+:root {
+  background-color: #020617;
+  color: white;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.neon-border {
+  border: 1px solid rgba(6, 182, 212, 0.5);
+  transition: all 0.3s ease;
+}
+
+.neon-border:hover {
+  border-color: #06b6d4;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.6);
+}
+
+.scrolling-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrolling-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom styles for the 3D canvas background */
+#canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at center, #0a0a2a 0%, #020617 100%);
+}
